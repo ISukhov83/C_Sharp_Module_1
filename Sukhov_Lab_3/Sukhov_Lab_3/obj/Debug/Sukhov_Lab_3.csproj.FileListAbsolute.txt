@@ -1,0 +1,5 @@
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_3\Sukhov_Lab_3\bin\Debug\Sukhov_Lab_3.exe.config
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_3\Sukhov_Lab_3\bin\Debug\Sukhov_Lab_3.exe
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_3\Sukhov_Lab_3\bin\Debug\Sukhov_Lab_3.pdb
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_3\Sukhov_Lab_3\obj\Debug\Sukhov_Lab_3.exe
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_3\Sukhov_Lab_3\obj\Debug\Sukhov_Lab_3.pdb

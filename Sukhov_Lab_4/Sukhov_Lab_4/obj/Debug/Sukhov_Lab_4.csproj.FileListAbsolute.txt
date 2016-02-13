@@ -1,0 +1,6 @@
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_4\Sukhov_Lab_4\bin\Debug\Sukhov_Lab_4.exe.config
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_4\Sukhov_Lab_4\obj\Debug\Sukhov_Lab_4.csprojResolveAssemblyReference.cache
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_4\Sukhov_Lab_4\bin\Debug\Sukhov_Lab_4.exe
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_4\Sukhov_Lab_4\bin\Debug\Sukhov_Lab_4.pdb
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_4\Sukhov_Lab_4\obj\Debug\Sukhov_Lab_4.exe
+E:\C_Sharp\C_Sharp_Projects\Sukhov_Lab_4\Sukhov_Lab_4\obj\Debug\Sukhov_Lab_4.pdb
