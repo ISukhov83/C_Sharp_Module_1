@@ -8,7 +8,7 @@ namespace Sukhov_Lab_4
 {
     struct Computer_Configurations
     {
-        public Int16 Configuration_ID;
+        public Int16 Configuration_ID; //RV: Enum should be used insted of Configuration_ID and Configuration_Name
         public String Configuration_Name;
         public Int16 Cores_Count;
         public decimal CPU_Freqvency;
@@ -46,6 +46,7 @@ namespace Sukhov_Lab_4
             Server.RAM = 16;
             Server.HDD_Capacity = 2048;
 
+            //RV: This array must contain real computer objects. Not integers.
             Int16[][] Departments_Computers = new Int16[4][];
             /*вносим данныев масив компьютеров по отделам*/
             Departments_Computers[0] = new Int16[5] { 1, 1, 2, 2, 3 };
@@ -72,9 +73,11 @@ namespace Sukhov_Lab_4
             Console.WriteLine("TASK 2");
             Int16 Max_HDD_Capacity = 0;
             decimal Min_CPU_Frequncy = 1000;
+            //RV: This is jagged array. No need to call GetLength(0). Just use Length property.
             for (Int32 i = 1; i <= Departments_Computers.GetLength(0); i++)
-            {
-                for (Int32 j = 1; j <= Departments_Computers[i - 1].GetLength(0); j++)
+            {                
+                //RV: Use < operator insted of <= and start index from 0 istead of 1. You will not need to substruct 1 from indexes
+                for (Int32 j = 1; j <= Departments_Computers[i - 1].GetLength(0); j++) 
                 {
                     //Console.WriteLine(Departments_Computers[i - 1][j - 1]);
                     switch (Departments_Computers[i - 1][j - 1])

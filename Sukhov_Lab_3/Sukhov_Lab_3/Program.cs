@@ -103,11 +103,11 @@ namespace ConsoleApplication2
             {
                 Factorial_Int = 1;
                 My_Number = Int64.Parse(String_number);
-                for (Int64 i = 1; i <= Int64.Parse(String_number); i++)
+                for (Int64 i = 1; i <= Int64.Parse(String_number); i++) //RV: You've already parsed this string and saved the value into variable. No need to parse it in every loop iteration. Use the variable
                 {
-                    if ((Factorial_Int * i) < Int64.MaxValue)
+                    if ((Factorial_Int * i) < Int64.MaxValue) 
                         Factorial_Int = Factorial_Int * i;
-                    else Console.WriteLine("Переполнение числа int64");
+                    else Console.WriteLine("Переполнение числа int64"); //RV: Will it ever enter this part?
 
                 }
                 return "Factorial of number " + String_number + "=" + Factorial_Int.ToString();
@@ -128,7 +128,7 @@ namespace ConsoleApplication2
             string A_String = "";
             string B_String = "";
             Console.WriteLine("Please select type of:");
-            Console.WriteLine("1. Puzzle \"The farmer, wolf, goat and cabbage\"");
+            Console.WriteLine("1. Puzzle \"The farmer, wolf, goat and cabbage\""); // RV: Don't see the implementation of this part
             Console.WriteLine("2. Simple calculator");
             Console.WriteLine("3. The factorial of the number");
             Console.WriteLine("4. Guess the number");

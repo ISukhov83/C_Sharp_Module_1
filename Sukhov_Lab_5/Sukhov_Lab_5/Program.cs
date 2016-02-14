@@ -41,7 +41,7 @@ namespace Sukhov_Lab_5
                     A = B;
                 for(Int32 k=1; k<= A; k++)
                 {
-                    Abs_String = Abs_String.Substring(1, Abs_String.Length - 2);
+                    Abs_String = Abs_String.Substring(1, Abs_String.Length - 2);//RV: Alternative method Abs_String.Replace("1#1", "#")
                     for (Int32 n = 1; n <= k; n++)
                         Console.Write(" ");
                     Console.WriteLine(Abs_String);
@@ -49,6 +49,7 @@ namespace Sukhov_Lab_5
 
             }
             /*Задача 2*/
+            //RV: It is much easier to accomplish this with % operator
             if (Menu_Position == 2)
             {
                 Console.Clear();
