@@ -46,12 +46,12 @@ namespace Sukhov_Lab_4
             Server.RAM = 16;
             Server.HDD_Capacity = 2048;
 
-            Int16[][] Departments_Computers = new Int16[4][];
+            Computer_Configurations[][] Departments_Computers = new Computer_Configurations[4][];
             /*вносим данныев масив компьютеров по отделам*/
-            Departments_Computers[0] = new Int16[5] { 1, 1, 2, 2, 3 };
-            Departments_Computers[1] = new Int16[3] { 2,2,2};
-            Departments_Computers[2] = new Int16[5] { 1,1,1,2,2};
-            Departments_Computers[3] = new Int16[4] { 1, 1,3,3 };
+            Departments_Computers[0] = new Computer_Configurations[5] { Desktop, Desktop, Laptop, Laptop, Server };
+            Departments_Computers[1] = new Computer_Configurations[3] { Laptop, Laptop, Laptop };
+            Departments_Computers[2] = new Computer_Configurations[5] { Desktop, Desktop, Desktop, Laptop, Laptop };
+            Departments_Computers[3] = new Computer_Configurations[4] { Desktop, Desktop, Server, Server };
 
             /*работа поиска ответов лабы*/
             /*1 общее количество компьютеров*/
@@ -77,31 +77,10 @@ namespace Sukhov_Lab_4
                 for (Int32 j = 1; j <= Departments_Computers[i - 1].GetLength(0); j++)
                 {
                     //Console.WriteLine(Departments_Computers[i - 1][j - 1]);
-                    switch (Departments_Computers[i - 1][j - 1])
-                    {
-                        case 1:
-                            if (Desktop.HDD_Capacity > Max_HDD_Capacity)
-                                Max_HDD_Capacity = Desktop.HDD_Capacity;
-                            if (Desktop.CPU_Freqvency < Min_CPU_Frequncy)
-                                Min_CPU_Frequncy = Desktop.CPU_Freqvency;
-                            break;
-                        case 2:
-                            if (Laptop.HDD_Capacity > Max_HDD_Capacity)
-                                Max_HDD_Capacity = Laptop.HDD_Capacity;
-                            if (Laptop.CPU_Freqvency < Min_CPU_Frequncy)
-                                Min_CPU_Frequncy = Laptop.CPU_Freqvency;
-                            break;
-                        case 3:
-                            if (Server.HDD_Capacity > Max_HDD_Capacity)
-                                Max_HDD_Capacity = Server.HDD_Capacity;
-                            if (Server.CPU_Freqvency < Min_CPU_Frequncy)
-                                Min_CPU_Frequncy = Server.CPU_Freqvency;
-                            break;
-                        default:
-                            Max_HDD_Capacity = 0;
-                            Min_CPU_Frequncy = 1000;
-                            break;
-                    }
+                    if(Departments_Computers[i - 1][j - 1].HDD_Capacity>= Max_HDD_Capacity)
+                        Max_HDD_Capacity = Departments_Computers[i - 1][j - 1].HDD_Capacity;
+                    if(Departments_Computers[i - 1][j - 1].CPU_Freqvency< Min_CPU_Frequncy)
+                        Min_CPU_Frequncy = Departments_Computers[i - 1][j - 1].CPU_Freqvency;
                 }
             }
             Console.WriteLine("Maximun HHD capacity is=" + Max_HDD_Capacity.ToString()+" Mb");
@@ -110,31 +89,10 @@ namespace Sukhov_Lab_4
             {
                 for (Int32 j = 1; j <= Departments_Computers[i - 1].GetLength(0); j++)
                 {
-                    //Console.WriteLine(Departments_Computers[i - 1][j - 1]);
-                    switch (Departments_Computers[i - 1][j - 1])
-                    {
-                        case 1:
-                            if (Desktop.HDD_Capacity == Max_HDD_Capacity)
-                                Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: "+ 
-                                    Desktop.Configuration_Name+", "+ Desktop.Cores_Count+" Cores, "+
-                                    Desktop.CPU_Freqvency+" HGz CPU, "+ Desktop.RAM+" GB RAM, "+ Desktop.HDD_Capacity+" Mb HDD");
-                            break;
-                        case 2:
-                            if (Laptop.HDD_Capacity == Max_HDD_Capacity)
-                                Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
-                                    Laptop.Configuration_Name + ", " + Laptop.Cores_Count + " Cores, " +
-                                    Laptop.CPU_Freqvency + " HGz CPU, " + Laptop.RAM + " GB RAM, " + Laptop.HDD_Capacity + " Mb HDD");
-                            break;
-                        case 3:
-                            if (Server.HDD_Capacity == Max_HDD_Capacity)
-                                Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
-                                    Server.Configuration_Name + ", " + Server.Cores_Count + " Cores, " +
-                                    Server.CPU_Freqvency + " HGz CPU, " + Server.RAM + " GB RAM, " + Server.HDD_Capacity + " Mb HDD");
-                            break;
-                        default:
-                            Console.WriteLine("No Computers!");
-                            break;
-                    }
+                   if(Departments_Computers[i - 1][j - 1].HDD_Capacity== Max_HDD_Capacity)
+                        Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
+                                    Departments_Computers[i - 1][j - 1].Configuration_Name + ", " + Departments_Computers[i - 1][j - 1].Cores_Count + " Cores, " +
+                                    Departments_Computers[i - 1][j - 1].CPU_Freqvency + " HGz CPU, " + Departments_Computers[i - 1][j - 1].RAM + " GB RAM, " + Departments_Computers[i - 1][j - 1].HDD_Capacity + " Mb HDD");
                 }
             }
             /*3 вывести компьютеры с с минимальным CPU*/
@@ -148,30 +106,11 @@ namespace Sukhov_Lab_4
                 for (Int32 j = 1; j <= Departments_Computers[i - 1].GetLength(0); j++)
                 {
                     //Console.WriteLine(Departments_Computers[i - 1][j - 1]);
-                    switch (Departments_Computers[i - 1][j - 1])
-                    {
-                        case 1:
-                            if (Desktop.CPU_Freqvency == Min_CPU_Frequncy)
-                                Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
-                                    Desktop.Configuration_Name + ", " + Desktop.Cores_Count + " Cores, " +
-                                    Desktop.CPU_Freqvency + " HGz CPU, " + Desktop.RAM + " GB RAM, " + Desktop.HDD_Capacity + " Mb HDD");
-                            break;
-                        case 2:
-                            if (Laptop.CPU_Freqvency == Min_CPU_Frequncy)
-                                Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
-                                    Laptop.Configuration_Name + ", " + Laptop.Cores_Count + " Cores, " +
-                                    Laptop.CPU_Freqvency + " HGz CPU, " + Laptop.RAM + " GB RAM, " + Laptop.HDD_Capacity + " Mb HDD");
-                            break;
-                        case 3:
-                            if (Server.CPU_Freqvency == Min_CPU_Frequncy)
-                                Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
-                                    Server.Configuration_Name + ", " + Server.Cores_Count + " Cores, " +
-                                    Server.CPU_Freqvency + " HGz CPU, " + Server.RAM + " GB RAM, " + Server.HDD_Capacity + " Mb HDD");
-                            break;
-                        default:
-                            Console.WriteLine("No Computers!");
-                            break;
-                    }
+                    if (Departments_Computers[i - 1][j - 1].CPU_Freqvency == Min_CPU_Frequncy)
+                        Console.WriteLine("Departament №" + i + " Computer №" + j + " Configuration: " +
+                                    Departments_Computers[i - 1][j - 1].Configuration_Name + ", " + Departments_Computers[i - 1][j - 1].Cores_Count + " Cores, " +
+                                    Departments_Computers[i - 1][j - 1].CPU_Freqvency + " HGz CPU, " + Departments_Computers[i - 1][j - 1].RAM + " GB RAM, " + Departments_Computers[i - 1][j - 1].HDD_Capacity + " Mb HDD");
+
                 }
             }
 
